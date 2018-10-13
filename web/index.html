@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Sistema Bancário</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <font face="Arial" size="5" color="#4682B4">
+            Sistema Bancário
+        </font>
+        
+        </br>
+        </br>
+            
+            <font face="Arial" size="3" color="#000000">Criar Conta</font></br>
+            <form action="ContaCorrente1" method="post">
+             <table>      
+                <tr><td>
+                Nº Conta: <input type="text" name="nome" size="20"/></br>
+                </td> </tr> 
+                <tr><td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CPF: <input type="text" name="cpf" size="20"/></br>
+                </td> </tr> 
+                
+                <tr><td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="submit" name="bt_cad" value="Confirmar"/>
+                <input type="reset" name="bt_limpar" value="Cancelar"/>
+
+                </td></tr>
+                </table>
+            </form>
+            
+            </br>
+            </br>
+            
+            <div>
+                <font face="Arial" size="3" color="#000000">Operações</font></br>
+            <form action="Operacao1" method="post">
+             <table>      
+                <tr><td>
+                Nº Conta: <input type="text" name="nConta" size="20"/></br>
+                </td> </tr> 
+                <tr><td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CPF: <input type="text" name="cpf" size="20"/></br>
+                </td> </tr> 
+                 <tr><td>
+                Valor R$: <input type="number" name="valor" size="20"/></br>
+                </td> </tr> 
+                <tr><td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="radio" name="op" value="credito" />Crédito  <input type="radio" name="op" value="debito" />Débito     
+                
+                </td></tr>        
+                <tr><td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="submit" name="bt_op" value="Salvar"/>
+                
+                </td></tr>
+                </table>
+            </form>
+            </div>
+            
+            </br>
+            </br>
+            
+             <div>
+                <font face="Arial" size="3" color="#000000">Emitir Extrato</font></br>
+            <form action="Extrato1" method="post">
+             <table>      
+                <tr><td>
+                Nº Conta: <input type="text" name="nConta" size="20"/></br>
+                </td> </tr> 
+                <tr><td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CPF: <input type="text" name="cpf" size="20"/></br>
+                </td> </tr> 
+                <tr><td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="submit" name="bt_emitir" value="Emitir Extrato"/>
+                
+                </td></tr>
+                </table>
+            </form>
+            </div>
+            
+    </body>
+</html>
