@@ -87,7 +87,7 @@ public class ContaCorrente extends HttpServlet {
         
              response.getWriter().println("<!DOCTYPE HTML/> <html><head><title>Conta Corrente</title> </head> <body style='background:#FFFFFF'>");
              response.getWriter().println("<div ALIGN='center'>");
-             response.getWriter().println("<h3>Cadastrado</h3>");
+             response.getWriter().println("<font face='calibri' color='#4682B4' size='6'>Cadastro efetuado com sucesso!</font></br>");
              response.getWriter().println("<a href='index.html'><button>Voltar</button></a>");
              response.getWriter().println("</div>");
              response.getWriter().println("</body></html>");

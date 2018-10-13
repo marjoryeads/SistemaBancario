@@ -77,7 +77,7 @@ public class Operacao extends HttpServlet {
         if(resp==true){
         Metodos.cadastraOperacao(Float.parseFloat(request.getParameter("valor")), cpf, op);
         response.getWriter().println("<div align='center'>");
-        response.getWriter().println("<h3>Operação efetuada com sucesso!</h3>");
+        response.getWriter().println("<font face='calibri' color='#4682B4' size='6'>Operação efetuada com sucesso!</font></br>");
         response.getWriter().println("<a href='index.html'><button>Voltar</button></a>");
         response.getWriter().println("</div>");
         }else{

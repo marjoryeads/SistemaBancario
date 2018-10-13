@@ -74,7 +74,7 @@ public class Extrato extends HttpServlet {
         processRequest(request, response);
         
        
-        response.getWriter().println("<!DOCTYPE HTML/> <html><head><title>Extrato</title> </head> <body style='background:#FFFFFF'>");
+        response.getWriter().println("<!DOCTYPE HTML/> <html><head><title>Extrato</title> </head> <body style='background:#E0FFFF'>");
         String contaResp=request.getParameter("nConta");
         boolean resp=Metodos.autenticaCliente(request.getParameter("nConta"), request.getParameter("cpf"));
           
