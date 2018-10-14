@@ -66,28 +66,14 @@ public class ContaCorrente extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost/sistema_bancario","root","");
-            java.sql.PreparedStatement ps= conn.prepareStatement("insert into contaCorrente(numeroConta, cpfTitular) values (?,?)");
-            ps.setString(1, request.getParameter("nome"));
-            ps.setString(2, request.getParameter("cpf"));
-            ps.execute();
-            
-           
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ContaCorrente.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ContaCorrente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+               
+       String conta= Metodos.criaConta(request.getParameter("nome"), request.getParameter("cpf"), response);
+         
              response.getWriter().println("<!DOCTYPE HTML/> <html><head><title>Conta Corrente</title> </head> <body style='background:#FFFFFF'>");
              response.getWriter().println("<div ALIGN='center'>");
              response.getWriter().println("<font face='calibri' color='#4682B4' size='6'>Cadastro efetuado com sucesso!</font></br>");
+             response.getWriter().println("<font face='calibri' color='#000000' size='5'>Seu número da conta:"+conta+" </font></br>");
+             response.getWriter().println("<font face='calibri' color='#000000' size='4'>Anote o número da sua conta e não perca.</br>As operações e emissão de extrato são feitas a partir desse número e do seu CPF. </font></br>");
              response.getWriter().println("<a href='index.html'><button>Voltar</button></a>");
              response.getWriter().println("</div>");
              response.getWriter().println("</body></html>");
