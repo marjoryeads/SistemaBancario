@@ -75,8 +75,9 @@ public class Extrato extends HttpServlet {
         
        
         response.getWriter().println("<!DOCTYPE HTML/> <html><head><title>Extrato</title> </head> <body style='background:#E0FFFF'>");
-        String contaResp=request.getParameter("nConta");
-        boolean resp=Metodos.autenticaCliente(request.getParameter("nConta"), request.getParameter("cpf"));
+        String conta=request.getParameter("nConta")+"-"+request.getParameter("nDig");
+        
+        boolean resp=Metodos.autenticaCliente(conta, request.getParameter("cpf"));
           
         if(resp==true){
                 
@@ -95,7 +96,7 @@ public class Extrato extends HttpServlet {
                 Connection conn= DriverManager.getConnection("jdbc:mysql://localhost/sistema_bancario","root","");
                 PreparedStatement ps= (PreparedStatement)conn.prepareStatement("select id from contacorrente where numeroConta=?");
                 PreparedStatement ps1;
-                ps.setString(1, request.getParameter("nConta"));
+                ps.setString(1, conta);
                 ResultSet r= ps.executeQuery();
                 int idResult=0;
                 
